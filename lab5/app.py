@@ -34,7 +34,7 @@ def load_user(user_id):
 # эндпоинт для главной страницы
 @app.route('/')
 def index():
-    # пользователь не авторизован - открывается страница входа
+    # если пользователь не авторизован - открывается страница входа
     if not current_user.is_authenticated:
         return redirect(url_for('login'))
     
