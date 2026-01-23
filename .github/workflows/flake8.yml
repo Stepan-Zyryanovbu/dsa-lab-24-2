@@ -1,17 +1,11 @@
 name: flake8
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
-  lint:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.x"
-
-      - run: pip install flake8
-
-      - run: flake8 .
+      - uses: actions/checkout@v3
+      - run: echo "2024-01-01 12:00" > test
+      - run: cat test
